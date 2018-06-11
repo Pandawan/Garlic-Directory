@@ -7,8 +7,15 @@ class Result extends Component {
             <Link className="Result" to="/user">
                 <div className="card interact-shadow card-result">
                     <div className="card-content">
-                        Card's results here
-                        <p>{this.props.content}</p>
+						{ !this.props.error ? '' :
+							<p className="has-text-danger">{this.props.error}</p>
+						}
+						{ !this.props.data ? '' :
+							<div className="user-info">
+								<h1 className="subtitle">{this.props.data.name}</h1>
+								<p>{this.props.data.bio}</p>
+							</div>
+						}
                     </div>
                 </div>
             </Link>
