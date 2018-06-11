@@ -13,3 +13,4 @@ Run `yarn start` to launch the test server on `localhost:3000`. You can now star
 ## Links for future ref
 - [Create React App](https://github.com/facebookincubator/create-react-app)
 - [Bulma](https://bulma.io)
+- [Firebase + React tutorial](https://css-tricks.com/intro-firebase-react/)
