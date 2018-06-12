@@ -2,6 +2,12 @@
 	background: #ffca42;
 }
 
+.is-centered {
+	display: block;
+	width: 100%;
+	margin: auto;
+}
+
 .full-input {
 	border-color: transparent;
 	padding: 1.5em 1em;
@@ -13,12 +19,24 @@
 	box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
+.search-extra {
+	margin-top: 0.25rem;
+}
+
 .help-text {
 	font-size: 0.75rem;
-	margin-top: 0.25rem;
 	color: white;
 }
 
 .card-list {
+	margin-top: 1em;
+}
+
+.algolia-logo {
+	text-align: center;
+	height: 1em;
+}
+
+.list-footer {
 	margin-top: 1em;
 }
