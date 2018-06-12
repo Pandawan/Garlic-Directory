@@ -20,3 +20,4 @@ Run `yarn start` to launch the server, this will run in a cloud function, so it'
 - [Create React App](https://github.com/facebookincubator/create-react-app)
 - [Bulma](https://bulma.io)
 - [Firebase + React tutorial](https://css-tricks.com/intro-firebase-react/)
+- [Algolia (Text-search)](https://firebase.google.com/docs/firestore/solutions/search)
