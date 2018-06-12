@@ -26,14 +26,16 @@ class Home extends Component {
     }
     submitSearch(e) {
         // Prevent from reloading when submitting a form
-        e.preventDefault();
+		e.preventDefault();
+
+		// Reset previous data
+		this.setState({
+			error: '',
+			results: []
+		});
 
         // If search field is empty, reset cards
         if (!this.state.search) {
-            this.setState({
-                error: '',
-                results: []
-            });
             return;
         }
 
@@ -46,10 +48,21 @@ class Home extends Component {
         usersRef.where('name', '==', this.state.search).get().then((querySnapshot) => {
             if (querySnapshot) {
                 // Reset results and map data
-                const newResults = querySnapshot.docs.filter((doc) => doc.exists ? true : false).map((doc) => doc.data());
-                this.setState({
-                    results: newResults
-                });
+				const newResults = querySnapshot.docs.filter((doc) => doc.exists ? true : false).map((doc) => doc.data());
+				// If there were results, add them
+				if (newResults.length > 0) {
+					console.log(`Found results for "${this.state.search}"`);
+					this.setState({
+						results: newResults
+					});
+				}
+				// No results
+				else {
+					console.log(`No results found for "${this.state.search}"`);
+					this.setState({
+						error: `No results found for "${this.state.search}"`
+					});
+				}
             }
             else {
                 console.log(`No results found for "${this.state.search}"`);
@@ -73,7 +86,7 @@ class Home extends Component {
                             <form className="control" onSubmit={this.submitSearch}>
                                 <input className="input card full-input interact-shadow" name="search" type="text" placeholder="Search for an user..." autoComplete="off" onChange={this.changeSearch} value={this.state.search}/>
                             </form>
-                            { this.state.results.length > 0 ? '' :
+                            { (this.state.results.length > 0 || this.state.error) ? '' :
                                 <Link id="search-help" className="help-text" to="/about">What is this?</Link> 
                             }
                             <div className="card-list">
