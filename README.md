@@ -13,6 +13,7 @@ Run `yarn` to install all the required dependencies.
 Run `yarn start` to launch the test server on `localhost:3000`. You can now start editing the code in `./src`.
 
 ### Cloud/Server
+*Btw, the way this is coded is very hack-ish, but I don't want to pay for server costs so whatever. It works.*
 Run `yarn` to install all the required dependencies.
 Run `yarn start` to launch the server, this will run in a cloud function, so it's not necessary.
 
